@@ -26,6 +26,7 @@ public:
 
 private:
     Ui::SDL3Game2_DescWND *ui;
+    void startGame();
 };
 
 

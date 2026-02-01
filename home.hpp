@@ -26,6 +26,9 @@ public:
 
 private:
     Ui::HomeWND *ui;
+    void btn_game1_clicked();
+    void btn_game2_clicked();
+    void btn_game3_clicked();
 };
 
 

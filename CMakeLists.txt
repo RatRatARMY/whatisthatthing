@@ -1,14 +1,21 @@
 cmake_minimum_required(VERSION 4.2)
 project(whatisthatthing)
-
+option(VENDOR_LIBS_MODE "Use vendor libs instead of system libs" ON)
 set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
-add_subdirectory(vendor/SDL EXCLUDE_FROM_ALL)
-add_subdirectory(vendor/SDL_image EXCLUDE_FROM_ALL)
-add_subdirectory(vendor/SDL_ttf EXCLUDE_FROM_ALL)
-add_subdirectory(vendor/SDL_mixer EXCLUDE_FROM_ALL)
+if(VENDOR_LIBS_MODE)
+    add_subdirectory(vendor/SDL EXCLUDE_FROM_ALL)
+    add_subdirectory(vendor/SDL_image EXCLUDE_FROM_ALL)
+    add_subdirectory(vendor/SDL_ttf EXCLUDE_FROM_ALL)
+    add_subdirectory(vendor/SDL_mixer EXCLUDE_FROM_ALL)
+else()
+    find_package(SDL3 REQUIRED)
+    find_package(SDL3_image REQUIRED)
+    find_package(SDL3_ttf REQUIRED)
+    find_package(SDL3_mixer REQUIRED)
+endif()
 find_package(Qt6 COMPONENTS
         Core
         Gui

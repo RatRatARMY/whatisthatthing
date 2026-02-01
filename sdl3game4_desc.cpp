@@ -6,7 +6,7 @@
 
 #include "sdl3game4_desc.hpp"
 #include "ui_sdl3game4_desc.h"
-
+#include "sdl3game4.hpp"
 
 SDL3Game4_DescWND::SDL3Game4_DescWND(QWidget *parent) : QWidget(parent), ui(new Ui::SDL3Game4_DescWND) {
     ui->setupUi(this);
@@ -14,4 +14,7 @@ SDL3Game4_DescWND::SDL3Game4_DescWND(QWidget *parent) : QWidget(parent), ui(new 
 
 SDL3Game4_DescWND::~SDL3Game4_DescWND() {
     delete ui;
+}
+void SDL3Game4_DescWND::startGame() {
+    game4::launch();
 }
