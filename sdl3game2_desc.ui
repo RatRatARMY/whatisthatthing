@@ -48,6 +48,10 @@
        <property name="text">
         <string>Play this game</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>assets/qt6/play.png</normaloff>assets/qt6/play.png</iconset>
+       </property>
       </widget>
      </item>
     </layout>

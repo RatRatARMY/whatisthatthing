@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>768</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -50,6 +50,10 @@
       <widget class="QPushButton" name="pushButton">
        <property name="text">
         <string>Play this game</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>assets/qt6/play.png</normaloff>assets/qt6/play.png</iconset>
        </property>
       </widget>
      </item>

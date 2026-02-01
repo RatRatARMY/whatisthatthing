@@ -19,6 +19,9 @@
      <property name="text">
       <string/>
      </property>
+     <property name="pixmap">
+      <pixmap>assets/qt6/pygame3_desc.png</pixmap>
+     </property>
     </widget>
    </item>
    <item>
@@ -47,6 +50,10 @@
       <widget class="QPushButton" name="pushButton">
        <property name="text">
         <string>Play this game</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>assets/qt6/play.png</normaloff>assets/qt6/play.png</iconset>
        </property>
       </widget>
      </item>

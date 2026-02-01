@@ -26,6 +26,9 @@ public:
 
 private:
     Ui::LoginWND *ui;
+    int num_of_invalid_login_attempt = 8;
+    void btn_login_clicked();
+    void go_to_register();
 };
 
 
