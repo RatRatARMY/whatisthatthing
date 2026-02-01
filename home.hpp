@@ -29,6 +29,9 @@ private:
     void btn_game1_clicked();
     void btn_game2_clicked();
     void btn_game3_clicked();
+    void btn_game4_clicked();
+    void btn_game5_clicked();
+    void btn_game6_clicked();
 };
 
 

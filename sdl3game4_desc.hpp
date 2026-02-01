@@ -27,6 +27,7 @@ public:
 private:
     Ui::SDL3Game4_DescWND *ui;
     void startGame();
+    void ret_to_home();
 };
 
 
