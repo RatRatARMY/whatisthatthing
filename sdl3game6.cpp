@@ -51,7 +51,7 @@ int game6::launch() {
     }
     TTF_Font* score_font = TTF_OpenFont("assets/sdl/ARIAL.TTF", 24);
     if (not score_font) {
-        SDL_Log("Cannot load font for some reason. Make sure this font is in the assets folder: %s", SDL_GetError());
+        SDL_Log("Cannot load font for some reason. Make sure these font is in the assets folder: %s", SDL_GetError());
         SDL_DestroyTexture(bg_img);
         SDL_DestroyTexture(rocketship_img);
         SDL_DestroyTexture(star_img);
