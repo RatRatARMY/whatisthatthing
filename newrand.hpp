@@ -6,6 +6,9 @@
 #define WHATISTHATTHING_NEWRAND_HPP
 #include <random>
 inline int randint(int a, int b) {
-    return std::rand() % (b - a + 1) + a;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution dis(a, b);
+    return dis(gen);
 }
 #endif //WHATISTHATTHING_NEWRAND_HPP
