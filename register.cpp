@@ -12,6 +12,7 @@
 RegisterWND::RegisterWND(QWidget *parent) : QWidget(parent), ui(new Ui::RegisterWND) {
     ui->setupUi(this);
     connect(ui->pushButton, &QPushButton::clicked, this, &RegisterWND::btn_register_clicked);
+    connect(ui->pushButton_2, &QPushButton::clicked, this, &RegisterWND::ret_to_login);
 }
 
 RegisterWND::~RegisterWND() {
