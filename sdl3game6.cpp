@@ -62,6 +62,7 @@ int game6::launch() {
         return 1;
     }
     int score = 0;
+    int missed = 0;
     int star_x = randint(0, SCREEN_WIDTH - 91);
     int star_y = 0;
     int star_speed = 5;
@@ -105,6 +106,7 @@ int game6::launch() {
                 star_y = 0;
                 star_x = randint(0, SCREEN_WIDTH - 91);
                 can_collide = true;
+                missed++;
             }
             if (can_collide and distance < 60) {
                 score++;
@@ -133,6 +135,13 @@ int game6::launch() {
         SDL_RenderTexture(renderer, score_texture, nullptr, &score_rect);
         SDL_DestroySurface(score_surface);
         SDL_DestroyTexture(score_texture);
+        std::string missed_str = "Number of star missed: " + std::to_string(missed);
+        SDL_Surface* missed_str_surface = TTF_RenderText_Solid(score_font, missed_str.c_str(), 0, white);
+        SDL_Texture* missed_str_texture = SDL_CreateTextureFromSurface(renderer, missed_str_surface);
+        SDL_FRect missed_str_rect = {0, 20, static_cast<float>(missed_str_surface->w), static_cast<float>(missed_str_surface->h)};
+        SDL_RenderTexture(renderer, missed_str_texture, nullptr, &missed_str_rect);
+        SDL_DestroySurface(missed_str_surface);
+        SDL_DestroyTexture(missed_str_texture);
         SDL_RenderPresent(renderer);
         Uint64 current_time = SDL_GetTicksNS();
         Uint64 frame_time_ns = 1000000000 / FPS;

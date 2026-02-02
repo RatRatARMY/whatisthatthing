@@ -5,6 +5,6 @@
 #ifndef WHATISTHATTHING_SDL3GAME2_HPP
 #define WHATISTHATTHING_SDL3GAME2_HPP
 namespace game2 {
-    void launch();
+    int launch();
 }
 #endif //WHATISTHATTHING_SDL3GAME2_HPP
