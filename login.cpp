@@ -27,7 +27,8 @@ void LoginWND::btn_login_clicked() {
     }
     else {
         auto something = QMessageBox::critical(this, "Login failed", "You entered wrong username or password\n"
-            "Number of invalid login attempts left: " + QString::number(num_of_invalid_login_attempt - 1));
+            "Number of invalid login attempts left: " + QString::number(num_of_invalid_login_attempt - 1),
+            QMessageBox::Ok | QMessageBox::Cancel);
         if (something == QMessageBox::Ok) {
             num_of_invalid_login_attempt -= 1;
         }
