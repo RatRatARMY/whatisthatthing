@@ -41,6 +41,11 @@ int game6::launch() {
     SDL_Texture* bg_img = IMG_LoadTexture(renderer, "assets/sdl/spr_background3.png");
     SDL_Texture* rocketship_img = IMG_LoadTexture(renderer, "assets/sdl/spr_rocketship.png");
     SDL_Texture* star_img = IMG_LoadTexture(renderer, "assets/sdl/spr_star.png");
+    SDL_Surface* icon_img = IMG_Load("assets/sdl/SDL_logo.png");
+    if (icon_img) {
+        SDL_SetWindowIcon(window, icon_img);
+        SDL_DestroySurface(icon_img);
+    }
     if (not bg_img or not rocketship_img or not star_img) {
         SDL_Log("Cannot load image for some reason. Make sure these images are in the assets folder: %s", SDL_GetError());
         SDL_DestroyRenderer(renderer);
